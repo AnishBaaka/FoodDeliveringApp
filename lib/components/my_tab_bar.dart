@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:newfood/models/food.dart';
 
@@ -18,8 +17,9 @@ class MyTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: TabBar(controller: tabController, tabs: _buildCategoryTabs()),
+    return TabBar(
+      controller: tabController,
+      tabs: _buildCategoryTabs(),
     );
   }
 }

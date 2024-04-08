@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newfood/components/my_current_location.dart';
 import 'package:newfood/components/my_description_box.dart';
 import 'package:newfood/components/my_drawer.dart';
+import 'package:newfood/components/my_food_tile.dart';
 import 'package:newfood/components/my_silver_app_bar.dart';
 import 'package:newfood/components/my_tab_bar.dart';
 import 'package:newfood/models/food.dart';
@@ -43,12 +44,19 @@ class _HomePageState extends State<HomePage>
     return FoodCategory.values.map((category) {
       List<Food> categoryMenu = _filterMenuByCategory(category, fullMenu);
 
+      //get category menu
       return ListView.builder(
         itemCount: categoryMenu.length,
         physics: const NeverScrollableScrollPhysics(),
+        padding: const EdgeInsets.all(0),
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(categoryMenu[index].name),
+          //get individual food
+          final food = categoryMenu[index];
+
+          //return food tile ui
+          return FoodTile(
+            food: food,
+            onTap: () {},
           );
         },
       );

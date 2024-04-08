@@ -115,7 +115,7 @@ class Restaurant extends ChangeNotifier {
       name: "Quinoa salad",
       description:
           "A hamburger with a slice of melted cheese on top of the meat patty, added near the end of the cooking time. ",
-      imagePath: "lib/images/salads/quinoa_salad.png",
+      imagePath: "lib/images/salads/quinoa_salad.jpg",
       price: 0.99,
       category: FoodCategory.salads,
       availableAddons: [
