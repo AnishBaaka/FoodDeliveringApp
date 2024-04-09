@@ -11,7 +11,7 @@ class Restaurant extends ChangeNotifier {
       description:
           "A hamburger with a slice of melted cheese on top of the meat patty, added near the end of the cooking time. ",
       imagePath: "lib/images/burgers/cheese_burger.png",
-      price: 0.99,
+      price: 9.99,
       category: FoodCategory.burgers,
       availableAddons: [
         Addons(name: "Extra cheese", price: 0.99),
@@ -22,53 +22,53 @@ class Restaurant extends ChangeNotifier {
     Food(
       name: "Aloha burger",
       description:
-          "A hamburger with a slice of melted cheese on top of the meat patty, added near the end of the cooking time. ",
+          "A tropical twist on the classic burger, with grilled pineapple, bacon, cheese, and teriyaki sauce.",
       imagePath: "lib/images/burgers/aloha_burger.png",
-      price: 0.99,
+      price: 8,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addons(name: "Extra cheese", price: 2),
+        Addons(name: "Bacon", price: 4),
+        Addons(name: "Bun", price: 5),
       ],
     ),
     Food(
       name: "BBQ burger",
       description:
-          "A hamburger with a slice of melted cheese on top of the meat patty, added near the end of the cooking time. ",
+          " A smoky, savory delight featuring a juicy beef patty topped with tangy barbecue sauce, melted cheese, crispy bacon, and crisp lettuce, all nestled between a toasted bun.",
       imagePath: "lib/images/burgers/bbq_burger.png",
-      price: 0.99,
+      price: 9,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addons(name: "Extra BBQ sauce", price: .9),
+        Addons(name: "cheese", price: 1.99),
+        Addons(name: "Beef patty", price: 2.99),
       ],
     ),
     Food(
       name: "Bluemoon Cheeseburger",
       description:
-          "A hamburger with a slice of melted cheese on top of the meat patty, added near the end of the cooking time. ",
+          ": A mouthwatering blend of flavors with a juicy beef patty topped with creamy blue cheese, crispy bacon, lettuce, tomato, and mayo, all on a toasted bun.",
       imagePath: "lib/images/burgers/bluemoon_burger.png",
-      price: 0.99,
+      price: 10.99,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addons(name: "Extra blue cheese", price: 0.99),
+        Addons(name: "Lettuce", price: 1.99),
+        Addons(name: "Mayo", price: 2.99),
       ],
     ),
     Food(
       name: "Vege Cheeseburger",
       description:
-          "A hamburger with a slice of melted cheese on top of the meat patty, added near the end of the cooking time. ",
+          "A delicious meatless option featuring a flavorful veggie patty topped with melted cheese, lettuce, tomato, and mayo, served on a toasted bun.",
       imagePath: "lib/images/burgers/vege_burger.png",
-      price: 0.99,
+      price: 7,
       category: FoodCategory.burgers,
       availableAddons: [
         Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addons(name: "Tomato", price: 1.99),
+        Addons(name: "Patty", price: 2.99),
       ],
     ),
     //salads

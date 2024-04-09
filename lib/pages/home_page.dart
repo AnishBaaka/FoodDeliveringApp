@@ -7,6 +7,7 @@ import 'package:newfood/components/my_silver_app_bar.dart';
 import 'package:newfood/components/my_tab_bar.dart';
 import 'package:newfood/models/food.dart';
 import 'package:newfood/models/restaurant.dart';
+import 'package:newfood/pages/food_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -56,7 +57,12 @@ class _HomePageState extends State<HomePage>
           //return food tile ui
           return FoodTile(
             food: food,
-            onTap: () {},
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => FoodPage(food: food),
+              ),
+            ),
           );
         },
       );

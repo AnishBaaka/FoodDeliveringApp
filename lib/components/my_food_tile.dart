@@ -22,22 +22,51 @@ class FoodTile extends StatelessWidget {
             child: Row(children: [
               //text food details
               Expanded(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(food.name),
-                  Text(food.price.toString()),
-                  Text(food.description),
-                ],
-              )),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      food.name,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      '\$${food.price}',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      food.description,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(
+                width: 15,
+              ),
 
               //food image
-              Image.asset(
-                food.imagePath,
-                height: 100,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(
+                  food.imagePath,
+                  height: 120,
+                ),
               ),
             ]),
           ),
+        ),
+        Divider(
+          color: Theme.of(context).colorScheme.tertiary,
+          indent: 25,
+          endIndent: 25,
         )
       ],
     );
