@@ -5,7 +5,7 @@ class Food {
   final String imagePath;       //lib/images/cheese_burger.png
   final double price;           //$4.99
   final FoodCategory category;  //burger
-  List<Addons> availableAddons; //[extra cheese,sauce,patty]
+  List<Addon> availableAddons; //[extra cheese,sauce,patty]
 
   Food({
     required this.name,
@@ -27,11 +27,11 @@ enum FoodCategory {
 }
 
 //food addons
-class Addons {
+class Addon {
   String name;
   double price;
 
-  Addons({
+  Addon({
     required this.name,
     required this.price,
   });

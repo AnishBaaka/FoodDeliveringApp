@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:newfood/components/my_button.dart';
 import 'package:newfood/models/food.dart';
+import 'package:newfood/models/restaurant.dart';
+import 'package:provider/provider.dart';
 
 class FoodPage extends StatefulWidget {
   final Food food;
-  final Map<Addons, bool> selectedAddons = {};
+  final Map<Addon, bool> selectedAddons = {};
 
   FoodPage({super.key, required this.food}) {
     //initialize selected addons to be false
-    for (Addons addons in food.availableAddons) {
+    for (Addon addons in food.availableAddons) {
       selectedAddons[addons] = false;
     }
   }
@@ -18,6 +20,23 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
+  //method to add to cart
+  void addToCart(Food food, Map<Addon, bool> selectedAddons) {
+    //clear the current food page to go back to menu
+    Navigator.pop(context);
+
+    //format the selected addons
+    List<Addon> currentlySelectedAddons = [];
+    for (Addon addon in widget.food.availableAddons) {
+      if (widget.selectedAddons[addon] == true) {
+        currentlySelectedAddons.add(addon);
+      }
+    }
+
+    //add to cart
+    context.read<Restaurant>().addToCart(food, currentlySelectedAddons);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -99,7 +118,7 @@ class _FoodPageState extends State<FoodPage> {
                           itemCount: widget.food.availableAddons.length,
                           itemBuilder: (context, index) {
                             //get individual addons
-                            Addons addon = widget.food.availableAddons[index];
+                            Addon addon = widget.food.availableAddons[index];
 
                             return CheckboxListTile(
                               title: Text(addon.name),
@@ -124,7 +143,9 @@ class _FoodPageState extends State<FoodPage> {
                 ),
 
                 //button add to cart
-                MyButton(text: "Add to cart", onTap: () {}),
+                MyButton(
+                    text: "Add to cart",
+                    onTap: () => addToCart(widget.food, widget.selectedAddons)),
 
                 const SizedBox(
                   height: 25,

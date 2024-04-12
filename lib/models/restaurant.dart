@@ -1,4 +1,6 @@
+import "package:collection/collection.dart";
 import "package:flutter/material.dart";
+import "package:newfood/models/cart_item.dart";
 
 import "food.dart";
 
@@ -14,9 +16,9 @@ class Restaurant extends ChangeNotifier {
       price: 9.99,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -27,9 +29,9 @@ class Restaurant extends ChangeNotifier {
       price: 8,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 2),
-        Addons(name: "Bacon", price: 4),
-        Addons(name: "Bun", price: 5),
+        Addon(name: "Extra cheese", price: 2),
+        Addon(name: "Bacon", price: 4),
+        Addon(name: "Bun", price: 5),
       ],
     ),
     Food(
@@ -40,9 +42,9 @@ class Restaurant extends ChangeNotifier {
       price: 9,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: "Extra BBQ sauce", price: .9),
-        Addons(name: "cheese", price: 1.99),
-        Addons(name: "Beef patty", price: 2.99),
+        Addon(name: "Extra BBQ sauce", price: .9),
+        Addon(name: "cheese", price: 1.99),
+        Addon(name: "Beef patty", price: 2.99),
       ],
     ),
     Food(
@@ -53,9 +55,9 @@ class Restaurant extends ChangeNotifier {
       price: 10.99,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: "Extra blue cheese", price: 0.99),
-        Addons(name: "Lettuce", price: 1.99),
-        Addons(name: "Mayo", price: 2.99),
+        Addon(name: "Extra blue cheese", price: 0.99),
+        Addon(name: "Lettuce", price: 1.99),
+        Addon(name: "Mayo", price: 2.99),
       ],
     ),
     Food(
@@ -66,9 +68,9 @@ class Restaurant extends ChangeNotifier {
       price: 7,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Tomato", price: 1.99),
-        Addons(name: "Patty", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Tomato", price: 1.99),
+        Addon(name: "Patty", price: 2.99),
       ],
     ),
     //salads
@@ -80,9 +82,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.salads,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -93,9 +95,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.salads,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -106,9 +108,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.salads,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -119,9 +121,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.salads,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -132,9 +134,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.salads,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
 
@@ -147,9 +149,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.sides,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -160,9 +162,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.sides,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -173,9 +175,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.sides,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -186,9 +188,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.sides,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -199,9 +201,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.sides,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     //deserts
@@ -213,9 +215,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.desserts,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -226,9 +228,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.desserts,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -239,9 +241,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.desserts,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -252,9 +254,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.desserts,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -265,9 +267,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.desserts,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     //drinks
@@ -279,9 +281,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -292,9 +294,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -305,9 +307,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -318,9 +320,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
     Food(
@@ -331,9 +333,9 @@ class Restaurant extends ChangeNotifier {
       price: 0.99,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addons(name: "Extra cheese", price: 0.99),
-        Addons(name: "Bacon", price: 1.99),
-        Addons(name: "Avocado", price: 2.99),
+        Addon(name: "Extra cheese", price: 0.99),
+        Addon(name: "Bacon", price: 1.99),
+        Addon(name: "Avocado", price: 2.99),
       ],
     ),
   ];
@@ -344,21 +346,89 @@ class Restaurant extends ChangeNotifier {
 
   */
   List<Food> get menu => _menu;
+  List<CartItem> get cart => _cart;
 
   /*
 
   OPERATIONS
   
+  
   */
+  //user cart
+  final List<CartItem> _cart = [];
+
   //add to cart
+  void addToCart(Food food, List<Addon> selectedAddon) {
+    //see if there is a cart item already with the same food and selected Addon
+    CartItem? cartItem = _cart.firstWhereOrNull((item) {
+      //check if the food items are the same
+      bool isSameFood = item.food == food;
+
+      //check if the list of selcted Addon are the same
+      bool isSameAddon =
+          const ListEquality().equals(item.selectedAddons, selectedAddon);
+      return isSameFood && isSameAddon;
+    });
+    if (cartItem != null) {
+      cartItem.quantity++;
+    }
+
+    //otherwise add a new cart item
+    else {
+      _cart.add(
+        CartItem(
+          food: food,
+          selectedAddons: selectedAddon,
+        ),
+      );
+    }
+    notifyListeners();
+  }
 
   //remove from the cart
+  void removeFromCart(CartItem cartItem) {
+    int cartIndex = _cart.indexOf(cartItem);
+
+    if (cartIndex != 1) {
+      if (_cart[cartIndex].quantity > 1) {
+        _cart[cartIndex].quantity--;
+      } else {
+        _cart.removeAt(cartIndex);
+      }
+    }
+    notifyListeners();
+  }
 
   //get total price of cart
+  double getTotalPrice() {
+    double total = 0.0;
+
+    for (CartItem cartItem in _cart) {
+      double itemTotal = cartItem.food.price;
+
+      for (Addon addon in cartItem.selectedAddons) {
+        itemTotal += addon.price;
+      }
+      total += itemTotal * cartItem.quantity;
+    }
+    return total;
+  }
 
   //get total number of items in cart
+  int getTotalItemCount() {
+    int totalItemCount = 0;
+
+    for (CartItem cartItem in _cart) {
+      totalItemCount += cartItem.quantity;
+    }
+    return totalItemCount;
+  }
 
   //clear the cart
+  void clearCart() {
+    _cart.clear();
+    notifyListeners();
+  }
 
   /*
 
