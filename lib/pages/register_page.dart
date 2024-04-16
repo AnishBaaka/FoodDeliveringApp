@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newfood/components/my_button.dart';
 import 'package:newfood/components/my_textfield.dart';
+import 'package:newfood/services/auth/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
@@ -19,6 +20,43 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
+
+//register method
+  void register() async {
+    //get the auth service
+    final authService = AuthService();
+
+    //check if the passwords match --> create user
+    if (passwordController.text == confirmPasswordController.text) {
+      //try creating user
+      try {
+        await authService.signUpWithEmailPassword(
+          emailController.text,
+          passwordController.text,
+        );
+      }
+
+      //didsplay any errors
+      catch (e) {
+        // ignore: use_build_context_synchronously
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(e.toString()),
+          ),
+        );
+      }
+    }
+    //if password don't match show --> error
+    else {
+      showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+          title: Text("Passwords don't match"),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +121,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
 
               //signup button
-              MyButton(text: "Sign Up", onTap: () {}),
+              MyButton(text: "Sign Up", onTap: register),
               const SizedBox(
                 height: 25,
               ),

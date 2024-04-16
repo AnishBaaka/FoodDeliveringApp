@@ -30,6 +30,7 @@ class DeliveryProgressPage extends StatelessWidget {
           topRight: Radius.circular(40),
         ),
       ),
+      padding: const EdgeInsets.all(25),
       child: Row(
         children: [
           //profile pic of driver
@@ -48,10 +49,61 @@ class DeliveryProgressPage extends StatelessWidget {
           ),
 
           //driver details
-
-          //message button
-
-          //call button
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Anish Wagle",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                ),
+              ),
+              Text(
+                "Driver",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          Row(
+            children: [
+              //message button
+              Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.background,
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.message,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              //call button
+              Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.background,
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.call,
+                    color: Colors.green,
+                  ),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );

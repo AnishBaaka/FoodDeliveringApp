@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newfood/components/my_button.dart';
 import 'package:newfood/components/my_textfield.dart';
-import 'package:newfood/pages/home_page.dart';
+import 'package:newfood/services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
@@ -20,19 +20,27 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController passwordController = TextEditingController();
 
   //login method
-  void login() {
-    /*
-    fill out authentication
+  void login() async {
+    //get instance of auth service
+    final authService = AuthService();
 
-    */
-
-    //navigate to home page
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const HomePage(),
-      ),
-    );
+    //try sign in
+    try {
+      await authService.signInWithEmailPassword(
+        emailController.text,
+        passwordController.text,
+      );
+    }
+    //display any errors
+    catch (e) {
+      // ignore: use_build_context_synchronously
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(e.toString()),
+        ),
+      );
+    }
   }
 
   @override
